@@ -9,9 +9,16 @@ return {
 		},
 	},
 	{
+		"rebelot/kanagawa.nvim",
+		priority = 100,
+		opts = {
+			terminalColors = false,
+		},
+	},
+	{
 		"LazyVim/LazyVim",
 		opts = {
-			colorscheme = "catppuccin",
+			colorscheme = "kanagawa",
 		},
 	},
 	{
@@ -68,6 +75,11 @@ return {
 		"Civitasv/cmake-tools.nvim",
 		opts = {},
 	},
+	{
+		"pmizio/typescript-tools.nvim",
+		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+		opts = {},
+	},
 	{ "andweeb/presence.nvim" },
 	{
 		"nvim-neo-tree/neo-tree.nvim",
@@ -75,7 +87,7 @@ return {
 			close_if_last_window = true,
 			default_component_configs = {
 				indent = {
-					indent_size = 3,
+					with_markers = false,
 				},
 			},
 			filesystem = {
@@ -271,5 +283,13 @@ return {
 
 			return opts
 		end,
+	},
+	{
+		"akinsho/bufferline.nvim",
+		opts = {
+			options = {
+				separator_style = "slant",
+			},
+		},
 	},
 }
