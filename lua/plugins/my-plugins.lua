@@ -13,6 +13,8 @@ return {
 		priority = 100,
 		opts = {
 			terminalColors = false,
+			commentStyle = { italic = false },
+			statementStyle = { bold = false },
 		},
 	},
 	{
@@ -100,6 +102,12 @@ return {
 			source_selector = {
 				winbar = true,
 			},
+		},
+	},
+	{
+		"snacks.nvim",
+		opts = {
+			scroll = { enabled = false },
 		},
 	},
 	{
