@@ -53,6 +53,7 @@ return {
 			keymap = {
 				preset = "super-tab",
 			},
+			fuzzy = { implementation = "prefer_rust_with_warning" },
 		},
 	},
 	{
@@ -299,5 +300,8 @@ return {
 				separator_style = "slant",
 			},
 		},
+	},
+	{
+		"youyoumu/pretty-ts-errors.nvim",
 	},
 }
