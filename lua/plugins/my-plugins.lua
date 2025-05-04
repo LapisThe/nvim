@@ -96,10 +96,14 @@ return {
 	{
 		"nvim-neo-tree/neo-tree.nvim",
 		opts = {
-			close_if_last_window = true,
 			default_component_configs = {
 				indent = {
 					with_markers = false,
+				},
+				icon = {
+					folder_closed = "",
+					folder_open = "",
+					folder_empty = "",
 				},
 			},
 			filesystem = {
@@ -108,9 +112,6 @@ return {
 					hide_dotfiles = false,
 					hide_gitignored = true,
 				},
-			},
-			source_selector = {
-				winbar = true,
 			},
 		},
 	},
@@ -200,7 +201,7 @@ return {
 					section_separators = { left = "", right = "" },
 				},
 				sections = {
-					lualine_a = { { "mode", separator = { left = "" }, right_padding = 2 } },
+					lualine_a = { { "mode", separator = { left = "", right = "" }, right_padding = 2 } },
 					lualine_b = { "branch" },
 
 					lualine_c = {
@@ -219,30 +220,46 @@ return {
 					},
 					lualine_x = {
 						Snacks.profiler.status(),
-          -- stylua: ignore
-          {
-            function() return require("noice").api.status.command.get() end,
-            cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
-            color = function() return { fg = Snacks.util.color("Statement") } end,
-          },
-          -- stylua: ignore
-          {
-            function() return require("noice").api.status.mode.get() end,
-            cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
-            color = function() return { fg = Snacks.util.color("Constant") } end,
-          },
-          -- stylua: ignore
-          {
-            function() return "  " .. require("dap").status() end,
-            cond = function() return package.loaded["dap"] and require("dap").status() ~= "" end,
-            color = function() return { fg = Snacks.util.color("Debug") } end,
-          },
-          -- stylua: ignore
-          {
-            require("lazy.status").updates,
-            cond = require("lazy.status").has_updates,
-            color = function() return { fg = Snacks.util.color("Special") } end,
-          },
+						{
+							function()
+								return require("noice").api.status.command.get()
+							end,
+							cond = function()
+								return package.loaded["noice"] and require("noice").api.status.command.has()
+							end,
+							color = function()
+								return { fg = Snacks.util.color("Statement") }
+							end,
+						},
+						{
+							function()
+								return require("noice").api.status.mode.get()
+							end,
+							cond = function()
+								return package.loaded["noice"] and require("noice").api.status.mode.has()
+							end,
+							color = function()
+								return { fg = Snacks.util.color("Constant") }
+							end,
+						},
+						{
+							function()
+								return "  " .. require("dap").status()
+							end,
+							cond = function()
+								return package.loaded["dap"] and require("dap").status() ~= ""
+							end,
+							color = function()
+								return { fg = Snacks.util.color("Debug") }
+							end,
+						},
+						{
+							require("lazy.status").updates,
+							cond = require("lazy.status").has_updates,
+							color = function()
+								return { fg = Snacks.util.color("Special") }
+							end,
+						},
 						{
 							"diff",
 							symbols = {
@@ -271,7 +288,7 @@ return {
 							function()
 								return " " .. os.date("%R")
 							end,
-							separator = { right = "" },
+							separator = { left = "", right = "" },
 							left_padding = 2,
 						},
 					},
@@ -307,6 +324,9 @@ return {
 		opts = {
 			options = {
 				separator_style = "slant",
+
+				buffer_close_icon = "",
+				close_icon = "",
 			},
 		},
 	},
