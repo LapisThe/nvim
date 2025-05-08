@@ -7,11 +7,20 @@ vim.opt.expandtab = false
 vim.opt.autoindent = true
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
+vim.opt.fileformat = "unix"
 
 vim.opt.guifont = "JetBrainsMono_Nerd_Font:h13:#h-normal"
 vim.opt.guicursor = "i:ver25-blinkwait100-blinkon500-blinkoff500"
 
 vim.lsp.set_log_level("off")
+
+if vim.fn.has("windows") == 1 then
+	vim.opt.shell = "pwsh"
+	vim.opt.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
+	vim.opt.shellredir = "| Out-File -Encoding UTF8"
+	vim.opt.shellpipe = "|"
+	vim.opt.shellxquote = ""
+end
 
 if vim.g.neovide then
 	vim.g.neovide_cursor_animation_length = 0
