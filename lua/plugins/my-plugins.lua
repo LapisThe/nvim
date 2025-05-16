@@ -5,7 +5,8 @@ return {
 		name = "catppuccin",
 		priority = 1000,
 		opts = {
-			transparent_background = true,
+			flavour = "mocha",
+			transparent_background = false,
 		},
 	},
 	{
@@ -20,7 +21,7 @@ return {
 	{
 		"LazyVim/LazyVim",
 		opts = {
-			colorscheme = "kanagawa",
+			colorscheme = "catppuccin",
 		},
 	},
 	{
@@ -90,9 +91,20 @@ return {
 	{
 		"pmizio/typescript-tools.nvim",
 		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-		opts = {},
+		opts = {
+			settings = {
+				complete_function_calls = true,
+			},
+		},
 	},
-	{ "andweeb/presence.nvim" },
+	{
+		"vyfor/cord.nvim",
+		opts = {
+			display = {
+				theme = "catppuccin",
+			},
+		},
+	},
 	{
 		"nvim-neo-tree/neo-tree.nvim",
 		opts = {
@@ -333,5 +345,6 @@ return {
 	},
 	{
 		"youyoumu/pretty-ts-errors.nvim",
+		opts = {},
 	},
 }

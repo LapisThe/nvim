@@ -2,7 +2,7 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 vim.opt.expandtab = false
 vim.opt.autoindent = true
 vim.opt.shiftwidth = 4
@@ -14,7 +14,7 @@ vim.opt.guicursor = "i:ver25-blinkwait100-blinkon500-blinkoff500"
 
 vim.lsp.set_log_level("off")
 
-if vim.fn.has("windows") == 1 then
+if vim.fn.has("win32") == 1 then
 	vim.opt.shell = "pwsh"
 	vim.opt.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
 	vim.opt.shellredir = "| Out-File -Encoding UTF8"
