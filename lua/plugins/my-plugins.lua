@@ -55,6 +55,12 @@ return {
 		},
 	},
 	{
+		"folke/noice.nvim",
+		dependencies = {
+			"rcarriga/nvim-notify",
+		},
+	},
+	{
 		"saghen/blink.cmp",
 		opts = {
 			appearance = {
@@ -91,11 +97,7 @@ return {
 	{
 		"pmizio/typescript-tools.nvim",
 		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-		opts = {
-			settings = {
-				complete_function_calls = true,
-			},
-		},
+		opts = {},
 	},
 	{
 		"vyfor/cord.nvim",
@@ -344,7 +346,8 @@ return {
 		},
 	},
 	{
-		"youyoumu/pretty-ts-errors.nvim",
+		"Fildo7525/pretty_hover",
+		event = "LspAttach",
 		opts = {},
 	},
 }

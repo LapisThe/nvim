@@ -10,3 +10,11 @@
 vim.api.nvim_create_autocmd("TermOpen", {
 	command = "setlocal nonumber norelativenumber",
 })
+
+vim.api.nvim_create_autocmd("CmdlineLeave", {
+	callback = function()
+		vim.fn.timer_start(5000, function()
+			vim.cmd([[echon ' ']])
+		end)
+	end,
+})
