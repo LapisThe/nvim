@@ -20,6 +20,8 @@ if vim.fn.has("win32") == 1 then
 	vim.opt.shellredir = "| Out-File -Encoding UTF8"
 	vim.opt.shellpipe = "|"
 	vim.opt.shellxquote = ""
+else
+	vim.opt.shell = "zsh"
 end
 
 if vim.g.neovide then

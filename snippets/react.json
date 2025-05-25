@@ -1,0 +1,6 @@
+{
+  "react": {
+    "prefix": "react",
+    "body": ["import React from \"@rbxts/react\";"]
+  }
+}

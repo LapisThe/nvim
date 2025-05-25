@@ -6,7 +6,7 @@ return {
 		priority = 1000,
 		opts = {
 			flavour = "mocha",
-			transparent_background = false,
+			transparent_background = true,
 		},
 	},
 	{
@@ -45,6 +45,9 @@ return {
 						}
 					end,
 				},
+			},
+			diagnostics = {
+				update_in_insert = true,
 			},
 		},
 	},
@@ -338,10 +341,16 @@ return {
 		"akinsho/bufferline.nvim",
 		opts = {
 			options = {
-				separator_style = "slant",
+				separator_style = "thin",
 
 				buffer_close_icon = "",
 				close_icon = "",
+
+				indicator = {
+					style = "none",
+				},
+
+				always_show_bufferline = true,
 			},
 		},
 	},
