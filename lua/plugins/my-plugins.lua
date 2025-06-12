@@ -6,7 +6,7 @@ return {
 		priority = 1000,
 		opts = {
 			flavour = "mocha",
-			transparent_background = true,
+			transparent_background = false,
 		},
 	},
 	{
@@ -45,6 +45,17 @@ return {
 						}
 					end,
 				},
+			},
+			setup = {
+				eslint = function()
+					require("lazyvim.util").lsp.on_attach(function(client)
+						if client.name == "eslint" then
+							client.server_capabilities.documentFormattingProvider = true
+						elseif client.name == "tsserver" then
+							client.server_capabilities.documentFormattingProvider = false
+						end
+					end)
+				end,
 			},
 			diagnostics = {
 				update_in_insert = true,
@@ -341,7 +352,7 @@ return {
 		"akinsho/bufferline.nvim",
 		opts = {
 			options = {
-				separator_style = "thin",
+				separator_style = "slant",
 
 				buffer_close_icon = "",
 				close_icon = "",
