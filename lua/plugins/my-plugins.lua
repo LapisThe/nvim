@@ -73,6 +73,7 @@ return {
 		dependencies = {
 			"rcarriga/nvim-notify",
 		},
+		enabled = false,
 	},
 	{
 		"saghen/blink.cmp",
