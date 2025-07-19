@@ -199,7 +199,7 @@ return {
 			--- Put your configuration here
 			---@type Neominimap.UserConfig
 			vim.g.neominimap = {
-				auto_enable = true,
+				auto_enable = false,
 			}
 		end,
 	},
