@@ -69,13 +69,6 @@ return {
 		},
 	},
 	{
-		"folke/noice.nvim",
-		dependencies = {
-			"rcarriga/nvim-notify",
-		},
-		enabled = false,
-	},
-	{
 		"saghen/blink.cmp",
 		opts = {
 			appearance = {
@@ -83,6 +76,11 @@ return {
 			},
 			keymap = {
 				preset = "super-tab",
+				["<Tab>"] = {
+					require("blink.cmp.keymap.presets").get("super-tab")["<Tab>"][1],
+					require("lazyvim.util.cmp").map({ "snippet_forward", "ai_accept" }),
+					"fallback",
+				},
 			},
 			fuzzy = { implementation = "prefer_rust_with_warning" },
 		},
@@ -112,7 +110,14 @@ return {
 	{
 		"pmizio/typescript-tools.nvim",
 		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-		opts = {},
+		opts = {
+			settings = {
+				tsserver_max_memory = 8192,
+				tsserver_file_preferences = {
+					includeCompletionsForModuleExports = true,
+				},
+			},
+		},
 	},
 	{
 		"vyfor/cord.nvim",
