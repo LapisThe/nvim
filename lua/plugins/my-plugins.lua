@@ -109,10 +109,11 @@ return {
 	},
 	{
 		"pmizio/typescript-tools.nvim",
+		enabled = false,
 		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
 		opts = {
 			settings = {
-				tsserver_max_memory = 8192,
+				tsserver_max_memory = 12288,
 				tsserver_file_preferences = {
 					includeCompletionsForModuleExports = true,
 				},
