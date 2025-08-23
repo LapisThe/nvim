@@ -6,7 +6,7 @@ return {
 		priority = 1000,
 		opts = {
 			flavour = "mocha",
-			transparent_background = false,
+			transparent_background = true,
 		},
 	},
 	{
@@ -16,6 +16,15 @@ return {
 			terminalColors = false,
 			commentStyle = { italic = false },
 			statementStyle = { bold = false },
+		},
+	},
+	{
+		"AlexvZyl/nordic.nvim",
+		priority = 1000,
+		opts = {
+			transparent = {
+				bg = true,
+			},
 		},
 	},
 	{
@@ -105,6 +114,7 @@ return {
 	{ "p00f/clangd_extensions.nvim" },
 	{
 		"Civitasv/cmake-tools.nvim",
+		enabled = false,
 		opts = {},
 	},
 	{
@@ -112,7 +122,7 @@ return {
 		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
 		opts = {
 			settings = {
-				tsserver_max_memory = 12288,
+				tsserver_max_memory = 10240,
 				tsserver_file_preferences = {
 					includeCompletionsForModuleExports = true,
 				},
@@ -139,12 +149,13 @@ return {
 		"vyfor/cord.nvim",
 		opts = {
 			display = {
-				theme = "catppuccin",
+				theme = "atom",
 			},
 		},
 	},
 	{
 		"nvim-neo-tree/neo-tree.nvim",
+		enabled = false,
 		opts = {
 			close_if_last_window = true,
 			default_component_configs = {
@@ -374,7 +385,7 @@ return {
 		"akinsho/bufferline.nvim",
 		opts = {
 			options = {
-				separator_style = "slant",
+				separator_style = "thin",
 
 				buffer_close_icon = "",
 				close_icon = "",
@@ -386,6 +397,13 @@ return {
 				always_show_bufferline = true,
 			},
 		},
+		-- Temporary fix #6354
+		init = function()
+			local bufline = require("catppuccin.groups.integrations.bufferline")
+			function bufline.get()
+				return bufline.get_theme()
+			end
+		end,
 	},
 	{
 		"Fildo7525/pretty_hover",
