@@ -56,17 +56,6 @@ return {
 					end,
 				},
 			},
-			setup = {
-				eslint = function()
-					require("lazyvim.util").lsp.on_attach(function(client)
-						if client.name == "eslint" then
-							client.server_capabilities.documentFormattingProvider = true
-						elseif client.name == "tsserver" then
-							client.server_capabilities.documentFormattingProvider = false
-						end
-					end)
-				end,
-			},
 			diagnostics = {
 				update_in_insert = true,
 			},
@@ -131,7 +120,7 @@ return {
 		},
 	},
 	{
-		"echasnovski/mini.icons",
+		"nvim-mini/mini.icons",
 		opts = {
 			file = {
 				[".eslintrc.js"] = { glyph = "󰱺", hl = "MiniIconsYellow" },
@@ -392,13 +381,6 @@ return {
 				always_show_bufferline = true,
 			},
 		},
-		-- Temporary fix #6354
-		init = function()
-			local bufline = require("catppuccin.groups.integrations.bufferline")
-			function bufline.get()
-				return bufline.get_theme()
-			end
-		end,
 	},
 	{
 		"Fildo7525/pretty_hover",
