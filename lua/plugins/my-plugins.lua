@@ -43,6 +43,7 @@ return {
 						"clangd",
 						"--background-index",
 						"--header-insertion=never",
+						"--function-arg-placeholders=false",
 					},
 				},
 				-- Necessary for eslint on windows
@@ -155,7 +156,7 @@ return {
 	},
 	{
 		"nvim-neo-tree/neo-tree.nvim",
-		enabled = false,
+		enabled = true,
 		opts = {
 			close_if_last_window = true,
 			default_component_configs = {
@@ -175,12 +176,6 @@ return {
 					hide_gitignored = true,
 				},
 			},
-		},
-	},
-	{
-		"snacks.nvim",
-		opts = {
-			scroll = { enabled = false },
 		},
 	},
 	{
@@ -409,5 +404,12 @@ return {
 		"Fildo7525/pretty_hover",
 		event = "LspAttach",
 		opts = {},
+	},
+	{
+		"lopi-py/luau-lsp.nvim",
+		opts = {},
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
 	},
 }
