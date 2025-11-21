@@ -7,6 +7,7 @@ return {
 		opts = {
 			flavour = "mocha",
 			transparent_background = true,
+			auto_integrations = true,
 		},
 	},
 	{
@@ -364,6 +365,16 @@ return {
 
 			return opts
 		end,
+	},
+	{
+		"snacks.nvim",
+		opts = {
+			zen = {
+				show = {
+					tabline = true,
+				},
+			},
+		},
 	},
 	{
 		"akinsho/bufferline.nvim",
