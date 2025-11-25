@@ -166,6 +166,9 @@ return {
 					hide_gitignored = true,
 				},
 			},
+			window = {
+				width = 50,
+			},
 		},
 	},
 	{

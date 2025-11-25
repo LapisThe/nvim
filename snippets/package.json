@@ -5,6 +5,10 @@
       {
         "language": "typescriptreact",
         "path": "./react.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./flamework.json"
       }
     ]
   }
