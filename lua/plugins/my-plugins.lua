@@ -377,6 +377,9 @@ return {
 					tabline = true,
 				},
 			},
+			scroll = {
+				enabled = false,
+			},
 		},
 	},
 	{
