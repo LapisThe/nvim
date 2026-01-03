@@ -408,4 +408,7 @@ return {
 			"nvim-lua/plenary.nvim",
 		},
 	},
+	{
+		"lambdalisue/vim-suda",
+	},
 }
