@@ -37,7 +37,7 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		opts = {
-			inlay_hints = { enabled = false },
+			-- inlay_hints = { enabled = false },
 			servers = {
 				clangd = {
 					cmd = {
@@ -372,11 +372,11 @@ return {
 	{
 		"snacks.nvim",
 		opts = {
-			zen = {
-				show = {
-					tabline = true,
-				},
-			},
+			-- zen = {
+			-- 	show = {
+			-- 		tabline = true,
+			-- 	},
+			-- },
 			scroll = {
 				enabled = false,
 			},
