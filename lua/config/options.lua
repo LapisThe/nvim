@@ -10,9 +10,6 @@ vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.fileformat = "unix"
 
---vim.opt.guifont = "JetBrainsMono_Nerd_Font:h13:#h-normal"
---vim.opt.guicursor = "i:ver25-blinkwait100-blinkon500-blinkoff500"
-
 vim.lsp.set_log_level("off")
 
 if vim.fn.has("win32") == 1 then
@@ -27,4 +24,6 @@ end
 
 if vim.g.neovide then
 	vim.g.neovide_scroll_animation_length = 0.1
+	vim.opt.guifont = "JetBrainsMono_Nerd_Font:h13:#h-normal"
+	vim.opt.guicursor = "i:ver25-blinkwait100-blinkon500-blinkoff500"
 end
