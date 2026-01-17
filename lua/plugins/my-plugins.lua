@@ -86,6 +86,14 @@ return {
 		},
 	},
 	{
+		"stevearc/conform.nvim",
+		opts = {
+			formatters_by_ft = {
+				xml = { "xmlstarlet" },
+			},
+		},
+	},
+	{
 		"christoomey/vim-tmux-navigator",
 		cmd = {
 			"TmuxNavigateLeft",
