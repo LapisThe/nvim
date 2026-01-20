@@ -9,6 +9,8 @@ vim.opt.autoread = true
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.fileformat = "unix"
+vim.opt.guifont = "JetBrainsMono_Nerd_Font:h13:#h-normal"
+vim.opt.guicursor = "i:ver25-blinkwait100-blinkon500-blinkoff500"
 
 vim.lsp.set_log_level("off")
 
@@ -27,6 +29,4 @@ if vim.g.neovide then
 	vim.g.neovide_window_blurred = true
 	vim.g.neovide_opacity = 0.9
 	vim.g.neovide_normal_opacity = 0.9
-	vim.opt.guifont = "JetBrainsMono_Nerd_Font:h13:#h-normal"
-	vim.opt.guicursor = "i:ver25-blinkwait100-blinkon500-blinkoff500"
 end

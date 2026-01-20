@@ -386,7 +386,13 @@ return {
 			-- 	},
 			-- },
 			scroll = {
-				enabled = false,
+				enabled = true,
+				animate = {
+					duration = {
+						step = 12,
+					},
+					easing = "outQuad",
+				},
 			},
 		},
 	},
@@ -421,5 +427,22 @@ return {
 	},
 	{
 		"lambdalisue/vim-suda",
+	},
+	{
+		"sphamba/smear-cursor.nvim",
+		opts = {
+			smear_insert_mode = true,
+			time_interval = 5,
+			legacy_computing_symbols_support = true,
+			hide_target_hack = true,
+			never_draw_over_target = true,
+		},
+	},
+	{
+		"numToStr/FTerm.nvim",
+		keys = {
+			{ mode = { "n" }, "<A-i>", "<CMD>lua require('FTerm').toggle()<CR>" },
+			{ mode = { "t" }, "<A-i>", "<C-\\><C-n><CMD>lua require('FTerm').toggle()<CR>" },
+		},
 	},
 }
