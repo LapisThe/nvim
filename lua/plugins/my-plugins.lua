@@ -386,7 +386,7 @@ return {
 			-- 	},
 			-- },
 			scroll = {
-				enabled = true,
+				enabled = not vim.g.neovide,
 				animate = {
 					duration = {
 						step = 12,
@@ -432,7 +432,7 @@ return {
 		"sphamba/smear-cursor.nvim",
 		opts = {
 			smear_insert_mode = true,
-			time_interval = 5,
+			time_interval = 7,
 			legacy_computing_symbols_support = true,
 			hide_target_hack = true,
 			never_draw_over_target = true,
