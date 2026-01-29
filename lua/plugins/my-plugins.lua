@@ -57,8 +57,24 @@ return {
 					end,
 				},
 			},
-			diagnostics = {
-				update_in_insert = true,
+			-- diagnostics = {
+			-- 	update_in_insert = true,
+			-- },
+		},
+	},
+	{
+		"folke/noice.nvim",
+		opts = {
+			routes = {
+				{
+					-- Filter out jdtls messages, since they spam on every key typed
+					filter = {
+						event = "lsp",
+						kind = "progress",
+						find = "jdtls",
+					},
+					opts = { skip = true },
+				},
 			},
 		},
 	},
