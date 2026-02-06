@@ -164,7 +164,7 @@ return {
 		"vyfor/cord.nvim",
 		opts = {
 			display = {
-				theme = "atom",
+				theme = "minecraft",
 			},
 		},
 	},
@@ -443,16 +443,6 @@ return {
 	},
 	{
 		"lambdalisue/vim-suda",
-	},
-	{
-		"sphamba/smear-cursor.nvim",
-		opts = {
-			smear_insert_mode = true,
-			time_interval = 7,
-			legacy_computing_symbols_support = true,
-			hide_target_hack = true,
-			never_draw_over_target = true,
-		},
 	},
 	{
 		"numToStr/FTerm.nvim",
