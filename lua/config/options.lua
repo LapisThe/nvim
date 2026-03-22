@@ -33,4 +33,5 @@ if vim.g.neovide then
 	vim.g.neovide_padding_bottom = 8
 	vim.g.neovide_padding_right = 8
 	vim.g.neovide_padding_left = 8
+	vim.g.neovide_input_macos_option_key_is_meta = "only_left"
 end
