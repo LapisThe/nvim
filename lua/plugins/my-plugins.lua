@@ -8,6 +8,7 @@ return {
 			flavour = "mocha",
 			transparent_background = not vim.g.neovide,
 			auto_integrations = true,
+			term_colors = true,
 		},
 	},
 	{
