@@ -12,8 +12,6 @@ vim.opt.fileformat = "unix"
 vim.opt.guifont = "JetBrainsMono_Nerd_Font:h13:#h-normal"
 vim.opt.guicursor = "i:ver25-blinkwait100-blinkon500-blinkoff500"
 
-vim.lsp.set_log_level("off")
-
 if vim.fn.has("win32") == 1 then
 	vim.opt.shell = "pwsh"
 	vim.opt.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
@@ -25,12 +23,15 @@ end
 if vim.g.neovide then
 	vim.g.neovide_scroll_animation_length = 0.2
 	vim.g.neovide_window_blurred = true
-	vim.g.neovide_opacity = 0.8
-	vim.g.neovide_normal_opacity = 0.8
+	vim.g.neovide_opacity = 0.9
+	vim.g.neovide_normal_opacity = 0.9
 	vim.g.neovide_padding_top = 8
 	vim.g.neovide_padding_bottom = 8
 	vim.g.neovide_padding_right = 8
 	vim.g.neovide_padding_left = 8
 	vim.g.neovide_input_macos_option_key_is_meta = "only_left"
+	vim.g.neovide_cursor_animation_length = 0.1
+	vim.g.neovide_cursor_trail_size = 2
+	vim.g.neovide_cursor_short_animation_length = 0.03
 	vim.g.neovide_cursor_animate_in_insert_mode = false
 end

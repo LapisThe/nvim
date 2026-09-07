@@ -76,6 +76,15 @@ return {
 					},
 					opts = { skip = true },
 				},
+				{
+					-- Filter out pyright messages, since they spam on every key typed
+					filter = {
+						event = "lsp",
+						kind = "progress",
+						find = "pyright",
+					},
+					opts = { skip = true },
+				},
 			},
 		},
 	},
@@ -463,6 +472,13 @@ return {
 		dependencies = { { "nvim-mini/mini.icons", opts = {} } },
 		-- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
 		-- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
+		lazy = false,
+	},
+	{
+		"ThePrimeagen/refactoring.nvim",
+		dependencies = {
+			"lewis6991/async.nvim",
+		},
 		lazy = false,
 	},
 }
